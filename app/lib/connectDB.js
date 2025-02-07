@@ -1,4 +1,3 @@
-// lib/connectDB.js
 import mongoose from "mongoose";
 
 const connectDB = async () => {
@@ -7,12 +6,14 @@ const connectDB = async () => {
   if (mongoose.connection.readyState >= 1) {
     return; // Already connected
   }
+
   try {
-    await mongoose.connect(mUrl);
-    // console.log("MongoDB connected");
+    await mongoose.connect(mUrl, {
+      serverSelectionTimeoutMS: 5000, // Timeout if MongoDB is slow
+    });
+    console.log("MongoDB Connected");
   } catch (error) {
-    console.error("Error connecting to MongoDB:", error);
-    process.exit(1); // Exit the process with an error code
+    console.error("MongoDB Connection Error:", error);
   }
 };
 
