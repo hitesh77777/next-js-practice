@@ -7,10 +7,9 @@ const connectDB = async () => {
   if (mongoose.connection.readyState >= 1) {
     return; // Already connected
   }
-  console.log("first");
   try {
     await mongoose.connect(mUrl);
-    console.log("MongoDB connected");
+    // console.log("MongoDB connected");
   } catch (error) {
     console.error("Error connecting to MongoDB:", error);
     process.exit(1); // Exit the process with an error code
