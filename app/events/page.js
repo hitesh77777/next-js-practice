@@ -80,7 +80,7 @@ function Event() {
         </div>
         <button onClick={() => router.push("/events/1")}>Event</button>
         <p className="typing">
-          A paragraph is a brief piece of writing that's around seven to ten
+          A paragraph is a brief piece of writing thats around seven to ten
           sentences long. The paragraph form refers to a group of sentences
           focusing on a single topic. There are three main parts of a paragraph:
           Topic sentence - it has the main idea. Supporting sentences - details
