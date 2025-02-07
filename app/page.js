@@ -1,7 +1,10 @@
+"use client";
 import Image from "next/image";
 import styles from "./page.module.css";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
   return (
     <div className={styles.page}>
       <main className={styles.main}>
@@ -44,6 +47,14 @@ export default function Home() {
           >
             Read our docs
           </a>
+          <button
+            onClick={() => {
+              // window.location.href = "/events";
+              router.push("/events");
+            }}
+          >
+            events
+          </button>
         </div>
       </main>
       <footer className={styles.footer}>
@@ -93,3 +104,6 @@ export default function Home() {
     </div>
   );
 }
+
+// mongoDb User & Password: hiteshnathani
+// mongo connection Key : mongodb+srv://hiteshnathani:hiteshnathani@cluster0.znqon.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
